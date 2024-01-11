@@ -26,8 +26,8 @@ module.exports = {
     },
     removerReceita: async (req, res) => {
         try{
-            await Receita.deleteOne({titulo: req.body.titulo})
-            res.send('Receita removida')
+            await Receita.deleteOne({_id: req.params.id})
+            res.send(`Receita ${req.params.id} removida`)
         }catch(error){
             console.log(error)
         }

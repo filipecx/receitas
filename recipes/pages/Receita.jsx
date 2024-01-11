@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import Axios from 'axios'
 import  ListGroup  from 'react-bootstrap/ListGroup'
 import { useParams } from 'react-router-dom'
+import { Button } from 'react-bootstrap'
 
 const baseUrl = 'http://localhost:3000/pegaReceita'
 
@@ -13,6 +14,7 @@ export function Receita(){
     const [rendimento, setRendimento] = useState('')
     const [etapa, setEtapa] = useState([''])
     const [ref, setReft] = useState([''])
+    const [id, setId] = useState()
     const pegaReceita = async () => {
         try{
             const response = await Axios.get(baseUrl + `/${titulo}`)
@@ -21,6 +23,7 @@ export function Receita(){
             setRendimento(response.data[0].rendimento)
             setEtapa(response.data[0].etapa)
             setReft(response.data[0].referencia)
+            setId(response.data[0]._id)
         //    response.data[0].ingredientes.map((ingrediente) => {
         //        setIngredientes(ingredientes => [...ingredientes, ingrediente])
         //    })
@@ -30,6 +33,15 @@ export function Receita(){
         }
     }
     
+    const removerReceita = async () => {
+        try{
+            await Axios.delete(baseUrl + `/removerReceita/${id}`)
+            .then((res) => console.log(res))
+        }catch(error){
+            console.log(error)
+        }
+    }
+
     useEffect(() => {
         pegaReceita()
     }, [])
@@ -81,6 +93,9 @@ export function Receita(){
                     })
                 }
             </ListGroup>
+            <Button variant='dark' onClick={removerReceita}>
+                Remover receita
+            </Button>
         </>
     )
 }

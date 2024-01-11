@@ -9,4 +9,6 @@ router.post('/adicionarReceita', homeController.adicionarReceita)
 
 router.get('/pegaReceita/:titulo', homeController.mostraReceita)
 
+router.delete('/pegaReceita/removerReceita/:id', homeController.removerReceita)
+
 module.exports = router
