@@ -6,7 +6,7 @@ import { Etapa } from '../components/Etapa'
 import { Referencia } from '../components/Referencia'
 import { useNavigate } from 'react-router-dom'
 
-const baseUrl = 'https://receitasback.onrender.com/adicionarReceita'
+const baseUrl = 'https://receitasback.onrender.com'
 
 export function AdicionarReceita(){
     const [titulo, setTitulo] = useState('')

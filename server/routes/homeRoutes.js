@@ -5,6 +5,8 @@ const homeController = require('../controllers/homeController')
 
 router.get('/', homeController.minhasReceitas)
 
+router.get('/adicionarReceita')
+
 router.post('/adicionarReceita', homeController.adicionarReceita)
 
 router.get('/pegaReceita/:titulo', homeController.mostraReceita)
