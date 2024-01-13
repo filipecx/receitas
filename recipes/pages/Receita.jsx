@@ -4,7 +4,7 @@ import  ListGroup  from 'react-bootstrap/ListGroup'
 import { useParams, useNavigate } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 
-const baseUrl = 'https://receitas-five.vercel.app/pegaReceita'
+const baseUrl = 'https://receitasback.vercel.app/pegaReceita'
 
 export function Receita(){
     let {titulo} = useParams()
