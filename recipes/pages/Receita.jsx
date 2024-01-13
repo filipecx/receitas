@@ -1,14 +1,16 @@
 import { useEffect, useState } from 'react'
 import Axios from 'axios'
 import  ListGroup  from 'react-bootstrap/ListGroup'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
 
-const baseUrl = 'http://localhost:3000/pegaReceita'
+const baseUrl = 'https://receitas-five.vercel.app/pegaReceita'
 
 export function Receita(){
     let {titulo} = useParams()
     
+    const navigate = useNavigate()
+
     const [nome, setNome] = useState('')
     const [ingredientes, setIngredientes] = useState([''])
     const [rendimento, setRendimento] = useState('')
@@ -36,7 +38,11 @@ export function Receita(){
     const removerReceita = async () => {
         try{
             await Axios.delete(baseUrl + `/removerReceita/${id}`)
-            .then((res) => console.log(res))
+            .then((res) => {
+                console.log(res)
+                navigate('/')
+            }
+                )
         }catch(error){
             console.log(error)
         }
@@ -87,7 +93,7 @@ export function Receita(){
                         return(
                             <ListGroup.Item
                             key={Math.floor(Math.random() * 1000)}>
-                                {referencia}
+                                <a>{referencia}</a>
                             </ListGroup.Item>
                         )
                     })
