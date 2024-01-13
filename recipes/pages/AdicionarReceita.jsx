@@ -6,7 +6,7 @@ import { Etapa } from '../components/Etapa'
 import { Referencia } from '../components/Referencia'
 import { useNavigate } from 'react-router-dom'
 
-const baseUrl = 'http://localhost:3000/'
+const baseUrl = 'https://receitas-five.vercel.app/'
 
 export function AdicionarReceita(){
     const [titulo, setTitulo] = useState('')
