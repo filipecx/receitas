@@ -2,7 +2,7 @@ import { useEffect, useState} from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Axios from 'axios'
 import {Titulo} from '../components/Titulo'
-const baseUrl = 'https://receitas-five.vercel.app/'
+const baseUrl = 'https://receitasback.vercel.app/'
 
 export function Home(){
     const [receitas, setReceita] = useState([])
