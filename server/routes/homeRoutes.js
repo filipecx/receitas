@@ -5,7 +5,7 @@ const homeController = require('../controllers/homeController')
 
 router.get('/', homeController.minhasReceitas)
 
-router.get('/adicionarReceita')
+router.get('/adicionarreceita', homeController.placeHolder)
 
 router.post('/adicionarReceita', homeController.adicionarReceita)
 

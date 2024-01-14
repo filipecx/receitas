@@ -9,6 +9,13 @@ module.exports = {
             console.log(error)
         }
     },
+    placeHolder: async (req, res) => {
+        try{
+            res.json(res)
+        }catch(error){
+            console.log(error)
+        }
+    },
     adicionarReceita: async (req, res) => {
         try{
             const novaReceita = new Receita({
