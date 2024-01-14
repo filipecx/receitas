@@ -7,7 +7,7 @@ router.get('/', homeController.minhasReceitas)
 
 router.get('/adicionarreceita', homeController.placeHolder)
 
-router.post('/adicionarReceita', homeController.adicionarReceita)
+router.post('/adicionarreceita', homeController.adicionarReceita)
 
 router.get('/pegaReceita/:titulo', homeController.mostraReceita)
 
