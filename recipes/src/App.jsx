@@ -17,7 +17,7 @@ function App() {
           <Nave />
           <Routes>
           <Route path='/' exact element={<Home />}/>
-          <Route path='/adicionarReceita' element={<AdicionarReceita />}/>
+          <Route path='/adicionarreceita' element={<AdicionarReceita />}/>
           <Route path='/pegaReceita/:titulo' element={<Receita />}/>
           </Routes>
         </Col>
