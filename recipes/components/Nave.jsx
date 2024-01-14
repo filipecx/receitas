@@ -9,6 +9,7 @@ export function Nave(){
                 <Navbar.Brand href='/'>Minhas receitas</Navbar.Brand>
                 <Nav>
                     <Nav.Link href='/adicionarreceita'>Adicionar Receita</Nav.Link>
+                    <Nav.Link href='/teste'>TESTE</Nav.Link>
                 </Nav>
             </Container>
         </Navbar>
