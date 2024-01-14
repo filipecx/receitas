@@ -11,7 +11,8 @@ module.exports = {
     },
     placeHolder: async (req, res) => {
         try{
-            res.json(res)
+            const receita = await Receita.find()
+            res.json(receita)
         }catch(error){
             console.log(error)
         }
