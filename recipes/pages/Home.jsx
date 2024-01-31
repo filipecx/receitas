@@ -11,7 +11,6 @@ export function Home(){
         try{
             const response = await Axios.get(baseUrl)
             setReceita(response.data)
-            console.log(receitas)
         
         }catch(error){
             console.log(error)

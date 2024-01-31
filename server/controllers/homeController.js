@@ -3,7 +3,7 @@ const Receita = require('../models/Receita')
 module.exports = {
     minhasReceitas: async (req, res) => {
         try{
-            const receita = await Receita.find()
+            const receita = await Receita.find({}, {titulo: 1})
             res.json(receita)
         }catch(error){
             console.log(error)

@@ -26,10 +26,7 @@ export function Receita(){
             setEtapa(response.data[0].etapa)
             setReft(response.data[0].referencia)
             setId(response.data[0]._id)
-        //    response.data[0].ingredientes.map((ingrediente) => {
-        //        setIngredientes(ingredientes => [...ingredientes, ingrediente])
-        //    })
-            console.log(response.data[0])
+       
         }catch(error){
             console.log(error)
         }
@@ -39,7 +36,6 @@ export function Receita(){
         try{
             await Axios.delete(baseUrl + `/removerReceita/${id}`)
             .then((res) => {
-                console.log(res)
                 navigate('/')
             }
                 )
